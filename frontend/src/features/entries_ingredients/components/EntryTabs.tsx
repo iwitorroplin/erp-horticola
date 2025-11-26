@@ -11,10 +11,7 @@ interface EntryTabsProps {
 
 export function EntryTabs({ value, onChange }: EntryTabsProps) {
   return (
-    <Tabs
-      value={value}
-      onValueChange={(val) => onChange(val as EntryTabKey)} // ✅ FIX
-    >
+    <Tabs value={value} onValueChange={(val) => onChange(val as EntryTabKey)}>
       <TabsList className="grid grid-cols-3 w-fit">
         {ENTRY_TYPES.map((tab) => (
           <TabsTrigger key={tab.key} value={tab.key}>

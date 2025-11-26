@@ -2,7 +2,7 @@
 
 import { columns } from "./table/columns";
 import { DataTable } from "./table/data-table";
-import type { IngredientEntry } from "../types/ingredient-entry";
+import type { IngredientEntry } from "../ingredients/types/ingredient-entry";
 
 const mockData: IngredientEntry[] = [
   {

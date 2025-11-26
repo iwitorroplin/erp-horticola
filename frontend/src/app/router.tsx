@@ -7,12 +7,14 @@ import PageLoader from "@/components/common/PageLoader";
 const HomePage = lazy(() => import("@/features/home/pages/HomePage"));
 const UsersPage = lazy(() => import("@/features/users/pages/UsersPage"));
 const StockPage = lazy(() => import("@/features/stock/pages/StockPage"));
-const EntriesPage = lazy(() => import("@/features/entries/pages/EntriesPage"));
+const EntriesIngredientsPage = lazy(
+  () => import("@/features/entries_ingredients/pages/EntriesPage")
+);
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />, // ✔ Sin children
+    element: <MainLayout />,
     children: [
       {
         index: true,
@@ -39,10 +41,10 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "entradas",
+        path: "entries_ingredients",
         element: (
           <Suspense fallback={<PageLoader />}>
-            <EntriesPage />
+            <EntriesIngredientsPage />
           </Suspense>
         ),
       },

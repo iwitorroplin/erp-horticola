@@ -1,7 +1,7 @@
 // src/features/entries/ingredients/pages/IngredientsTab.tsx
 
 import { IngredientsFilters } from "../components/IngredientsFilters";
-import { IngredientsTable } from "../components/IngredientsTable";
+import { IngredientsTable } from "../../components/IngredientsTable";
 import { NewIngredientEntryButton } from "../components/NewIngredientEntryButton";
 
 export function IngredientsTab() {

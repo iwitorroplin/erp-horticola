@@ -13,12 +13,17 @@ import {
 // Si se cambian de lucide → phosphor → heroicons,
 // solo modificar este archivo.
 
+export const MenuIcon = {
+  menu: Menu,
+};
+
 export const Icons = {
+  menu: Menu,
   home: Home,
   users: Users,
   stock: Package,
-  entradas: LogIn,
-  menu: Menu,
+
+  entries_ingredients: LogIn,
   settings: Settings,
   bell: Bell,
   user: User,
