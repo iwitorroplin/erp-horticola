@@ -8,7 +8,11 @@ const HomePage = lazy(() => import("@/features/home/pages/HomePage"));
 const UsersPage = lazy(() => import("@/features/users/pages/UsersPage"));
 const StockPage = lazy(() => import("@/features/stock/pages/StockPage"));
 const EntriesIngredientsPage = lazy(
-  () => import("@/features/entries_ingredients/pages/EntriesPage")
+  () =>
+    import("@/features/entries_ingredients/pages/EntriesIngredientsDashboard")
+);
+const EmpthyPage = lazy(
+  () => import("@/features/empthy_page/pages/EmpthyPage")
 );
 
 export const router = createBrowserRouter([
@@ -45,6 +49,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<PageLoader />}>
             <EntriesIngredientsPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/emmpthy_page",
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <EmpthyPage />
           </Suspense>
         ),
       },

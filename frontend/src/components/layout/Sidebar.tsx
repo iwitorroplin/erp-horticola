@@ -1,6 +1,6 @@
 import type { ElementType } from "react";
 import { NavLink } from "react-router-dom";
-import { Home, LogIn, Package, Users } from "lucide-react";
+import { Home, LogIn, Package, Users, PackagePlus, Box } from "lucide-react";
 
 interface SidebarProps {
   open: boolean;
@@ -14,13 +14,30 @@ interface NavItemConfig {
 }
 
 const navItems: NavItemConfig[] = [
-  { path: "/", label: "Inicio", icon: Home },
-  { path: "/usuarios", label: "Usuarios", icon: Users },
-  { path: "/stock", label: "Stock", icon: Package },
+  {
+    path: "/",
+    label: "Inicio",
+    icon: Home,
+  },
+  {
+    path: "/usuarios",
+    label: "Usuarios",
+    icon: Users,
+  },
+  {
+    path: "/stock",
+    label: "Stock",
+    icon: Package,
+  },
   {
     path: "/entries_ingredients",
     label: "Entrada de Ingredientes",
-    icon: LogIn,
+    icon: PackagePlus,
+  },
+  {
+    path: "/emmpthy_page",
+    label: "Entrada de Materia Prima",
+    icon: PackagePlus,
   },
 ];
 
@@ -57,7 +74,7 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
 
       <aside
         aria-label="Menú de navegación"
-        className={`fixed top-0 left-0 z-50 w-56 bg-white border-r border-slate-200
+        className={`fixed top-0 left-0 z-50 w-70 bg-white border-r border-slate-200
           h-screen p-4 transform transition-transform duration-300
           ${open ? "translate-x-0" : "-translate-x-full"}
         `}
