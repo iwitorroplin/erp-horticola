@@ -1,11 +1,11 @@
 import { PageContainer } from "@/components/common/PageContainer";
-import QuickAccessCard from "../../../components/common/QuickAccessCard";
-import SummaryCard from "../../../components/common/SummaryCard";
+import QuickAccessCard from "@/components/common/QuickAccessCard";
+import SummaryCard from "@/components/common/SummaryCard";
 
 // iconos
-import { Salad, Package, Users, FileText } from "lucide-react";
+import { FileText, Package, Salad } from "lucide-react";
 
-export default function EntriesIngredientsPage() {
+export default function EntriesIngredientsDashboardPage() {
   return (
     <PageContainer>
       <div className=" bg-slate-100 p-8">
@@ -43,14 +43,14 @@ export default function EntriesIngredientsPage() {
                 title="Añadir Ingrediente"
                 description="Registrar un nuevo ingrediente."
                 icon={Salad}
-                link="/entries_ingredients/add"
+                link="/entries-ingredients/add"
               />
 
               <QuickAccessCard
                 title="Consultar Ingredientes"
                 description="Ver listado completo."
                 icon={Package}
-                link="/entries_ingredients/list"
+                link="/entries-ingredients/list"
               />
             </div>
           </div>

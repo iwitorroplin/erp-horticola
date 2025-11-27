@@ -1,6 +1,6 @@
 import { PageContainer } from "@/components/common/PageContainer";
 
-export default function EmpthyPage() {
+export default function RawMaterialEntriesPage() {
   return (
     <PageContainer>
       <div className=" bg-slate-100 p-8">
@@ -8,9 +8,11 @@ export default function EmpthyPage() {
           {/* TITLE */}
           <header>
             <h1 className="text-3xl font-extrabold text-slate-800">
-              Pagina en blanco para test
+              Entradas de materia prima
             </h1>
-            <p className="text-slate-600">Panel de prueba</p>
+            <p className="text-slate-600">
+              Módulo placeholder para futuros flujos de materia prima.
+            </p>
           </header>
         </div>
       </div>

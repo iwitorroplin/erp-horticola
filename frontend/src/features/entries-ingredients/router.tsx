@@ -1,5 +1,5 @@
-import { lazy } from "react";
-import { Suspense } from "react";
+import { lazy, Suspense } from "react";
+import type { RouteObject } from "react-router-dom";
 import PageLoader from "@/components/common/PageLoader";
 import EntriesIngredientsLayout from "./layout/EntriesIngredientsLayout";
 
@@ -9,8 +9,8 @@ const EntriesIngredientsDashboard = lazy(
 const AddIngredientPage = lazy(() => import("./pages/AddIngredientPage"));
 const ListIngredientsPage = lazy(() => import("./pages/ListIngredientsPage"));
 
-export const entriesIngredientsRoutes = {
-  path: "entries_ingredients",
+export const entriesIngredientsRoutes: RouteObject = {
+  path: "entries-ingredients",
   element: <EntriesIngredientsLayout />,
   children: [
     {
