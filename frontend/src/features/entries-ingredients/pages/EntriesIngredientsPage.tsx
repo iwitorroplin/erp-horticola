@@ -1,9 +1,7 @@
+import { FileText, Package, Salad } from "lucide-react";
 import { PageContainer } from "@/components/common/PageContainer";
-import QuickAccessCard from "../../../components/common/QuickAccessCard";
-import SummaryCard from "../../../components/common/SummaryCard";
-
-// iconos
-import { Salad, Package, Users, FileText } from "lucide-react";
+import QuickAccessCard from "@/components/common/QuickAccessCard";
+import SummaryCard from "@/components/common/SummaryCard";
 
 export default function EntriesIngredientsPage() {
   return (
@@ -40,22 +38,16 @@ export default function EntriesIngredientsPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <QuickAccessCard
-                title="Gestión de Usuarios"
-                description="Crear, editar y asignar roles."
-                icon={Users}
-                link="/users"
+                title="Añadir ingrediente"
+                description="Registrar un nuevo ingrediente."
+                icon={Salad}
+                link="/entries-ingredients/add"
               />
               <QuickAccessCard
-                title="Stock"
-                description="Consulta y gestión de existencias."
+                title="Consultar ingredientes"
+                description="Ver listado completo."
                 icon={Package}
-                link="/stock"
-              />
-              <QuickAccessCard
-                title="Informes"
-                description="Ver reportes almacenados."
-                icon={FileText}
-                link="/reports"
+                link="/entries-ingredients/list"
               />
             </div>
           </div>

@@ -1,8 +1,8 @@
-import { PageContainer } from "@/components/common/PageContainer";
-import QuickAccessCard from "../../../components/common/QuickAccessCard";
-import SummaryCard from "../../../components/common/SummaryCard";
-
 import { Package, Users, FileText } from "lucide-react";
+import { PageContainer } from "@/components/common/PageContainer";
+import QuickAccessCard from "@/components/common/QuickAccessCard";
+import SummaryCard from "@/components/common/SummaryCard";
+import { quickAccessDefaults } from "@/config/navigation";
 
 export default function HomePage() {
   return (
@@ -37,24 +37,15 @@ export default function HomePage() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <QuickAccessCard
-                title="Gestión de Usuarios"
-                description="Crear, editar y asignar roles."
-                icon={Users}
-                link="/users"
-              />
-              <QuickAccessCard
-                title="Stock"
-                description="Consulta y gestión de existencias."
-                icon={Package}
-                link="/stock"
-              />
-              <QuickAccessCard
-                title="Informes"
-                description="Ver reportes almacenados."
-                icon={FileText}
-                link="/reports"
-              />
+              {quickAccessDefaults.map(({ key, label, description, icon, path }) => (
+                <QuickAccessCard
+                  key={key}
+                  title={label}
+                  description={description}
+                  icon={icon}
+                  link={path}
+                />
+              ))}
             </div>
           </div>
         </div>

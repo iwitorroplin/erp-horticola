@@ -1,6 +1,6 @@
 import type { ElementType } from "react";
 import { NavLink } from "react-router-dom";
-import { Home, LogIn, Package, Users, PackagePlus, Box } from "lucide-react";
+import { navigationItems } from "@/config/navigation";
 
 interface SidebarProps {
   open: boolean;
@@ -12,34 +12,6 @@ interface NavItemConfig {
   label: string;
   icon: ElementType;
 }
-
-const navItems: NavItemConfig[] = [
-  {
-    path: "/",
-    label: "Inicio",
-    icon: Home,
-  },
-  {
-    path: "/usuarios",
-    label: "Usuarios",
-    icon: Users,
-  },
-  {
-    path: "/stock",
-    label: "Stock",
-    icon: Package,
-  },
-  {
-    path: "/entries_ingredients",
-    label: "Entrada de Ingredientes",
-    icon: PackagePlus,
-  },
-  {
-    path: "/emmpthy_page",
-    label: "Entrada de Materia Prima",
-    icon: PackagePlus,
-  },
-];
 
 function NavItem({ path, label, icon: Icon }: NavItemConfig) {
   return (
@@ -82,9 +54,11 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
         <h2 className="text-xl font-semibold mb-4">Menú</h2>
 
         <nav className="space-y-2" aria-label="Secciones principales">
-          {navItems.map((item) => (
-            <NavItem key={item.path} {...item} />
-          ))}
+          {navigationItems
+            .filter((item) => item.showInSidebar !== false)
+            .map(({ key, label, path, icon }) => (
+              <NavItem key={key} path={path} label={label} icon={icon} />
+            ))}
         </nav>
       </aside>
     </>

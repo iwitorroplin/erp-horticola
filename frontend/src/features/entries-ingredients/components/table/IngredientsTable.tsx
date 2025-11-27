@@ -1,8 +1,6 @@
-// src/features/entries/ingredients/components/IngredientsTable.tsx
-
-import { columns } from "./table/columns";
-import { DataTable } from "./table/data-table";
-import type { IngredientEntry } from "../ingredients/types/ingredient-entry";
+import { columns } from "./columns";
+import { DataTable } from "./data-table";
+import type { IngredientEntry } from "../../types/ingredient-entry";
 
 const mockData: IngredientEntry[] = [
   {
@@ -21,6 +19,6 @@ const mockData: IngredientEntry[] = [
   },
 ];
 
-export function IngredientsTable() {
+export default function IngredientsTable() {
   return <DataTable columns={columns} data={mockData} />;
 }
